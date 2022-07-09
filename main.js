@@ -1,6 +1,7 @@
 const { channel } = require("diagnostics_channel");
 const { Client, Intents } = require("discord.js");
 require('dotenv').config()
+const config = require("./config.json");
 // The Client and Intents are destructured from discord.js, since it exports an object by default. Read up on destructuring here https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment
 const client = new Client({
     intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES]
