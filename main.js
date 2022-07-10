@@ -39,7 +39,7 @@ function main() {
     })
 }
 
-main()
+main();
 
 /*
 Creating a section here for code
