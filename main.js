@@ -6,8 +6,8 @@ const config = require("./config.json");
 const client = new Client({
     intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES]
 });
-client.login(process.env.TOKEN);
-const prefix = ".";
+client.login(config.token);
+
 
 function main() {
     client.on("ready", () => {
@@ -16,11 +16,26 @@ function main() {
       });
 
     client.on("messageCreate", (message) => {
-        if (!message.content.startsWith(prefix) || message.author.bot) return;
-        if (message.content.startsWith(`${prefix}ping`)) {
+        if (!message.content.startsWith(config.prefix) || message.author.bot) return;
+        if (message.content.startsWith(`${config.prefix}ping`)) {
             message.channel.send("pong!");
         }
     })
 }
 
 main()
+
+/*
+Creating a section here for code
+I might use a bunch but not sure
+
+---> Commands
+Used to remove prefix, remove whitespae at beginning and end, and split the string
+const args = message.content.slice(prefix.length).trim().split(/ +/g);
+
+Used to remove the command and send all values to lowercase
+const command = args.shift().toLowerCase();
+---
+
+
+*/
