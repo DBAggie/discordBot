@@ -1,6 +1,6 @@
 const { channel } = require("diagnostics_channel");
 const { Client, Intents } = require("discord.js");
-require('dotenv').config()
+const fs = require('fs');
 const config = require("./config.json");
 // The Client and Intents are destructured from discord.js, since it exports an object by default. Read up on destructuring here https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment
 const client = new Client({
@@ -10,15 +10,31 @@ client.login(config.token);
 
 
 function main() {
+    //Connect bot and confirm status ready
     client.on("ready", () => {
         console.log("I am ready!");
         
       });
-
+    //On message check for commands --> Will be replaced with slash commands in future
     client.on("messageCreate", (message) => {
         if (!message.content.startsWith(config.prefix) || message.author.bot) return;
         if (message.content.startsWith(`${config.prefix}ping`)) {
             message.channel.send("pong!");
+        }
+        if (message.content.startsWith(`${config.prefix}userid`)) {
+            let userId = message.author.id;
+            message.channel.send(userId);
+        }
+        if (message.content.startsWith(`${config.prefix}channelid`)) {
+            let channelId = message.channel.id;
+            message.channel.send(channelId);
+        }
+        if (message.content.startsWith(`${config.prefix}myuser`)) {
+            let userName = message.author;
+            message.channel.send(`Your username is ${userName}`);
+        }
+        if (message.content.startsWith(`${config.prefix}emote`)) {
+            message.channel.send(":grinning:");
         }
     })
 }
