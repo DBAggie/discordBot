@@ -1,0 +1,6 @@
+{
+    "token": "ENTER YORU TOKEN HERE",
+    "prefix": "ENTER A PREFIX IF NOT USING SLASH COMMANDS",
+    "clientid": "ENTER BOT ID",
+    "guildid": "ENTER SERVER ID"
+}

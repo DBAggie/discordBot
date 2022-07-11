@@ -1,2 +1,4 @@
 .env
-config.json
+#Comment the below out if using github to store your branches
+#Be careful because without that you may accidentally push your token
+#config.json
