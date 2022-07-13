@@ -1,10 +1,14 @@
 module.exports = {
     name: "interactionCreate",
     async execute(interaction, client) {
-        console.log(`hit the interaction create script`);
+
+        //console.log(`hit the interaction create script`);
         if (!interaction.isCommand()) return console.log("Not a valid command");
+
         const command = client.commands.get(interaction.commandName);
+
         if (!command) return;
+
         try {
             console.log("Trying to execute");
             await command.execute(interaction);
@@ -14,6 +18,7 @@ module.exports = {
                 ephemeral: true,
             });
         }
-        console.log("Below the catch");
+        //console.log("Below the catch");
+        //console.log('Below the below catch message');
     },
 };

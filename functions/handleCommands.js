@@ -4,7 +4,7 @@ const config = require('../config.json');
 const fs = require('node:fs');
 
 module.exports = (client) => {
-    console.log('Hit handleCommands')
+    //console.log('Hit handleCommands')
     client.handleCommands = async (commandFolders, path) => {
         client.commandArray = [];
         for (folder of commandFolders) {
