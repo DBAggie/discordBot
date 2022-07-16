@@ -14,7 +14,5 @@ module.exports = {
                 ephemeral: true,
             });
         }
-        //console.log("Below the catch");
-        //console.log('Below the below catch message');
     },
 };

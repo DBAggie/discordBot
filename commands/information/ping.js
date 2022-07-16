@@ -6,6 +6,6 @@ module.exports = {
 		.setDescription('Replies with Pong!'),
 	async execute(interaction) {
 		//console.log('Hit the exectution of the pong');
-		await interaction.reply({content: "Pong!", ephemeral: true});
+		await interaction.defer({content: "Pong!", ephemeral: true});
 	},
 };
